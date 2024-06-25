@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>უნივერსიტეტის შეფასებითი სქემა</title>
+</head>
+<body>
+    <div>
+        <h1>უნივერსიტეტის შეფასებითი სქემა</h1>
+        <label for="score">შეიყვანეთ ქულა (0-100): </label>
+        <input type="number" id="score" min="0" max="100">
+        <button onclick="calculateGrade()">გაანგარიშება</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateGrade() {
+            const score = document.getElementById('score').value;
+            let grade;
+
+            if (score >= 90) {
+                grade = 'A';
+            } else if (score >= 80) {
+                grade = 'B';
+            } else if (score >= 70) {
+                grade = 'C';
+            } else if (score >= 60) {
+                grade = 'D';
+            } else {
+                grade = 'F';
+            }
+
+            document.getElementById('result').innerText = `თქვენი შეფასება არის: ${grade}`;
+        }
+    </script>
+</body>
+</html>
